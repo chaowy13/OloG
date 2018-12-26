@@ -1,0 +1,4 @@
+<!--pages/dairy/dairy.wxml-->
+<view class='dateZone'>
+<text class='dateStr'>{{date}}</text>
+</view>

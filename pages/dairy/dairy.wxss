@@ -1,0 +1,10 @@
+/* pages/dairy/dairy.wxss */
+
+.dateZone {
+margin-left: 20px
+
+}
+.dateStr{
+font-size: 14px;
+
+}
