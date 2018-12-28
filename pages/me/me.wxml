@@ -1,0 +1,11 @@
+<!--pages/me/me.wxml-->
+<view class="container">
+<view class ='avatar'>
+  <image class ='icon' bindtap ='clickicon' bindtouchstart ='starttouchicon'
+  bindtouchend='endtouchicon' src='{{avatarUrl}}' background-size="cover"/>
+</view>
+
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+   </view>

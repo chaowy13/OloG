@@ -1,18 +1,39 @@
 // pages/dairy/dairy.js
+var util = require('../../utils/util.js');
+const IMAGE_FACE_SMILE = '../../images/smile.png';
+const IMAGE_FACE_WINK = '../../images/wink.png';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    date:'2018.12.25'
-
+    date:'',
+    words:'',
+    input:'',
+    savepic_url: IMAGE_FACE_SMILE,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
+    var date=util.formatDate(new Date());
+    var that=this;
+    wx.getStorage({
+      key:date,
+      success: function(res) {
+        that.setData(
+          {
+            words: res.data,
+            input: res.data
+          })
+      }
+    })
+    this.setData({
+      date:date
+    })
 
   },
 
@@ -62,6 +83,59 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    var username = wx.getStorageSync('nickName')
+    return {
+      title: 'Dairy ' + this.data.date+'\n @' + username,
+      path: "/pages/index/index?page=dairy"
+    }
+  },
 
+
+
+  getinput:function(e){
+    e.words = e.detail.value
+    this.setData({
+      input:e.detail.value
+    })
+  },
+starttouchsave:function() {
+  this.setData({
+    savepic_url:IMAGE_FACE_WINK
+  })
+},
+ endtouchsave: function () {
+    this.setData({
+      savepic_url: IMAGE_FACE_SMILE
+    })
+  },
+
+
+  saveclick: function() {
+  var record ={
+    date:this.data.date,
+    input: this.data.input
   }
+  wx.setStorage({
+    key: record.date,
+    data: record.input,
+  })
+  var records = wx.getStorageSync('records') || []
+    if (records[0] != util.formatDate(new Date()))
+    records.unshift(util.formatDate(new Date()))
+  wx.setStorage({
+      key: 'records',
+      data: records,
+    })
+    if(record.input!= ''){
+    wx.showToast({
+      title: 'Saved to Dairy',
+      icon: 'success',
+      duration: 2000
+    })
+    }
+
+
+
+  },
+
 })

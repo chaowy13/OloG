@@ -1,0 +1,17 @@
+<!--pages/history/history.wxml-->
+<view class='testZone'>
+<text class='testStr'>{{index}}</text>
+</view>
+<view class='wordslist'>
+ <block wx:for="{{words_list}}" wx:key="k">
+
+ <view class='wordslist-item'>
+<view class='dayZone'>
+<text class='dayStr'>{{item.date}}</text>
+</view>
+<view class='wordsZone'>
+<text class='wordsStr'>{{item.words}}</text>
+</view>
+ </view>
+</block>
+</view>

@@ -1,0 +1,14 @@
+/* pages/me/me.wxss */
+.icon{
+  width: 180rpx;
+  height: 180rpx;
+  margin-top: 200rpx;
+  margin-left:285rpx;
+  border-radius: 50%;
+}
+.usermotto {
+  margin-top:40rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color:rgb(53, 53, 53);
+}

@@ -1,7 +1,16 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container" bindtouchstart='starttouchpage' bindtouchmove='movetouchpage' bindtouchend='endtouchpage'>
+<dialog id='dialog' 
+      bind:confirmEvent='confirmEvent'
+      bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>
+<view class ='history'>
+  <image class ='face' bindtap ='clickface' bindtouchstart ='starttouchface'
+  bindtouchend='endtouchface' src='{{facepic_url}}'/>
+  </view>
 
-  <image class ='face' src='https://lg-mtl3kqx4-1256222650.cos.ap-shanghai.myqcloud.com/smile_03.png'/>
-
-  <image class ='add' bindtap ='clickadd' src='https://lg-mtl3kqx4-1256222650.cos.ap-shanghai.myqcloud.com/add_07.png'/>
+<view class='add'>
+  <image style = 'opacity:{{opacity}};' bindtap ='clickadd' bindtouchstart ='starttouchadd'
+  bindtouchend='endtouchadd' src='{{addpic_url}}'/>
+  </view>
 </view>

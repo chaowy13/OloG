@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/dairy/dairy"
+    "pages/dairy/dairy",
+    "pages/history/history",
+    "pages/me/me"
   ],
   "window": {
     "backgroundTextStyle": "light",

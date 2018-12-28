@@ -1,1 +1,7 @@
-{}
+{
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+      "usingComponents": {
+        "dialog": "../../components/dialog/dialog"
+      }
+  }

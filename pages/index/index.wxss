@@ -1,30 +1,28 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
+page{
+height:100%
 
-.userinfo-nickname {
-  color: #aaa;
 }
+.container{
+  position: relative;
 
-.usermotto {
-  margin-top: 200px;
 }
 .face{
-height:100px;
+height:200rpx;
+width:640rpx;
+margin-top: 200rpx;
+margin-left:55rpx;
 }
-
 .add{
-margin-top: 300px; 
-height:60px;
-width:60px;
+  bottom: 200rpx;
+  left: 315rpx;
+position: fixed;
+  
+}
+.add image{
+  
+height:120rpx;
+width:120rpx;
+
 }

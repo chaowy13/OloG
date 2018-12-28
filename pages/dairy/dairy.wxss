@@ -1,10 +1,30 @@
 /* pages/dairy/dairy.wxss */
 
 .dateZone {
-margin-left: 20px
-
+margin-left: 60rpx;
 }
 .dateStr{
-font-size: 14px;
+color:rgba(255, 156, 0, 1);
+background-color: rgba(255, 156, 0, 0.1)
+
+}
+.dairyZone{
+margin-left: 60rpx;
+margin-top: 36rpx;
+}
+.dairy{
+color:rgb(53, 53, 53);
+width: 630rpx;
+height: 1000rpx;
+}
+.face{
+position: fixed;
+bottom:70rpx;
+margin-left: 30rpx;
+display: flex;
+}
+.face image{
+height:70rpx;
+width:250rpx;
 
 }
