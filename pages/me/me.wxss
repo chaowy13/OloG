@@ -12,3 +12,14 @@
   font-size: 36rpx;
   color:rgb(53, 53, 53);
 }
+.enter{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 32rpx;
+bottom: 200rpx;
+left:225rpx;
+width: 300rpx;
+height:70rpx;
+position: fixed;
+color: rgb(53, 53, 53);
+text-align: center;
+}

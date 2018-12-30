@@ -30,7 +30,9 @@ Page({
             key: date,
             success: function (ress) {
               var words = ress.data
+              if(words){
               var nlist = [{ date, words }]
+              }
               nwords_list = nwords_list.concat(nlist);
             }
           })

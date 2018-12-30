@@ -35,7 +35,8 @@ Page({
         url: '../' + options.page + '/' + options.page
       })
     }
-    if (that.data.userInfo != null) {
+    console.log(that.data.userInfo)
+    if (that.data.userInfo) {
       that.setData({
         hasUserInfo: true
       })
@@ -81,7 +82,7 @@ Page({
   },
   clickadd: function() {
     wx.navigateTo({
-      url: '../dairy/dairy'
+      url: '../diary/diary'
     })
   },
   starttouchface: function () {
@@ -103,22 +104,19 @@ Page({
     
 
   },
-  clickface: function () {
-    wx.navigateTo({
-      url: '../history/history'
-    })
-  },
 
   starttouchpage: function (e) {
+    console.log(e)
     this.setData({
-      lastX: e.touches[0].pageX,
-       lastY :e.touches[0].pageY
+      lastX: e.touches[0].clientX,
+      lastY: e.touches[0].clientY
     }) 
     
   },
   movetouchpage: function (e) {
-    var cX = e.touches[0].pageX;
-    var cY = e.touches[0].pageY;
+    console.log(e)
+    var cX = e.touches[0].clientX;
+    var cY = e.touches[0].clientY;
     this.setData({
       currentGesture: 1,
       currentX: cX,
@@ -138,7 +136,7 @@ Page({
     console.log(this.data.lastY)
 
 
-    if ( ty < -150 && ty < tx) {
+    if ( tx < -150 && Math.abs(ty) <50 ) {
       if (!that.data.currentJump && that.data.currentGesture){
       wx.navigateTo({
         url: '../me/me',
@@ -163,15 +161,16 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    console.log('done')
 
   },
-  /**
+  /**  
  * 用户点击右上角分享
  */
   onShareAppMessage: function () {
     var username = wx.getStorageSync('nickName')
     return{
-      title: "@"+ username +"\n“嘘🙊，这是秘密”",
+      title: "“嘘——这是秘密:)”",
       path: "/pages/index/index"
 
     }

@@ -76,14 +76,21 @@ Page({
 
   },
 
+  enterClick:function() {
+    wx.reLaunch({
+      url: '../launch/launch',
+    })
+  },
+
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
     return{
-      path: '/pages/index/index?page=me',
-      title: 'About @'+ username+ ' :)'
+      title: 'About @' + this.data.username + ' :)',
+      path: '/pages/index/index?page=me'
+      
     }
 
   }

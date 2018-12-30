@@ -1,4 +1,4 @@
-// pages/dairy/dairy.js
+
 var util = require('../../utils/util.js');
 const IMAGE_FACE_SMILE = '../../images/smile.png';
 const IMAGE_FACE_WINK = '../../images/wink.png';
@@ -85,8 +85,8 @@ Page({
   onShareAppMessage: function () {
     var username = wx.getStorageSync('nickName')
     return {
-      title: 'Dairy ' + this.data.date+'\n @' + username,
-      path: "/pages/index/index?page=dairy"
+      title: 'Diary ' + this.data.date+' @' + username,
+      path: "/pages/index/index?page=diary"
     }
   },
 
@@ -126,9 +126,9 @@ starttouchsave:function() {
       key: 'records',
       data: records,
     })
-    if(record.input!= ''){
+    if(record.input){
     wx.showToast({
-      title: 'Saved to Dairy',
+      title: 'Saved to Diary',
       icon: 'success',
       duration: 2000
     })

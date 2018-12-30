@@ -1,0 +1,49 @@
+/* pages/lanuch/launch.wxss */
+page{
+height:100%;
+
+}
+
+.title{
+position: fixed;
+top: 200rpx;
+left:75rpx;
+width:600rpx;
+text-align: center;
+}
+.welcome{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size:60rpx;
+width:100%;
+color:white;
+}
+.bg{
+  position: fixed;
+  top: 0rpx;
+  left:0rpx;
+  width: 750rpx;
+}
+.bg1{
+  width:750rpx;
+  height:1200rpx;
+  position: fixed;
+  top: 0rpx;
+  left:0rpx;
+}
+.bg0{
+  position: fixed;
+  top: 0rpx;
+  left:0rpx;
+  width:750rpx;
+  height:1200rpx;
+}
+.enter{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+bottom: 200rpx;
+left:225rpx;
+font-size: 32rpx;
+width: 300rpx;
+height:70rpx;
+position: fixed;
+color: #5a7ebb;
+}

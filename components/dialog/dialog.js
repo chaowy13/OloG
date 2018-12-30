@@ -12,7 +12,7 @@ Component({
     // 弹窗内容
     content: {
       type: String,
-      value: 'Tell your name To Meow :)'
+      value: 'Tell your Nickname To Me :)'
     },
 
     // 弹窗确认按钮文字

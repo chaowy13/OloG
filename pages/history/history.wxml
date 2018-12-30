@@ -7,10 +7,10 @@
 
  <view class='wordslist-item'>
 <view class='dayZone'>
-<text class='dayStr'>{{item.date}}</text>
+<text class='dayStr' selectable='true'>{{item.date}}</text>
 </view>
 <view class='wordsZone'>
-<text class='wordsStr'>{{item.words}}</text>
+<text class='wordsStr'selectable='true'>{{item.words}}</text>
 </view>
  </view>
 </block>

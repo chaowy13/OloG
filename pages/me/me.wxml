@@ -8,4 +8,8 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+
+  <view>
+<button class ='enter' bindtap='enterClick'>Back Welcome</button>
+</view>
    </view>

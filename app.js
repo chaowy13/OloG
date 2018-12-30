@@ -1,7 +1,8 @@
 //app.js
 App({
   globalData: {
-    userInfo: wx.getStorageSync('userInfo')
+    userInfo: wx.getStorageSync('userInfo'),
+    auth: wx.getStorageSync('auth')
   },
   onShow:function(){
 },
@@ -20,7 +21,8 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
-    if (that.globalData.userInfo == null)
+    console.log(that.globalData.userInfo)
+    if (!that.globalData.userInfo){
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -47,5 +49,6 @@ App({
         }
       }
     })
+    }
   }
 })

@@ -1,9 +1,9 @@
-<!--pages/dairy/dairy.wxml-->
+
 <view class='dateZone'>
 <text class='dateStr'>{{date}}</text>
 </view>
-<view class='dairyZone'>
-<textarea class='dairy' placeholder= ':)' bindinput='getinput' value='{{words}}' auto-focus show-confirm-bar='false' maxlength ='280'></textarea>
+<view class='diaryZone'>
+<textarea class='diary' placeholder= ':)' bindinput='getinput' value='{{words}}' auto-focus show-confirm-bar='false' maxlength ='280'></textarea>
 </view>
 <view class='face'>
 <image src='{{savepic_url}}' bindtap='saveclick' bindtouchstart='starttouchsave' bindtouchend='endtouchsave'/>

@@ -1,0 +1,13 @@
+<!--pages/lanuch/launch.wxml-->
+<view class='container' style='background-color:{{bgcolor}};'>
+
+<image class='bg1' style = 'opacity:{{gifshow}};height:{{picbgheight}};' src='{{picbg1}}' />
+<image class='bg0' src='{{picbg0}}' style = 'opacity:{{bgshow}};'/>
+<view class='title' style = 'opacity:{{opacity}};'>
+<text class='welcome'>{{welcome}}
+</text>
+</view>
+<view>
+<button class ='enter' style = 'opacity:{{opacity}}; ' bindgetuserinfo='bindGetUserInfo' bindtap='enterClick'>Enter OloG</button>
+</view>
+</view>
