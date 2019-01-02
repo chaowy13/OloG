@@ -1,12 +1,13 @@
 // pages/me/me.js
+const IMAGE_ICON='../../images/iconhalf.jpg'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    avatarUrl:'',
-    username:'',
+    avatarUrl:IMAGE_ICON,
+    username:'mystery man',
     motto:'You’re what you write :)'
   },
   /**

@@ -8,6 +8,6 @@
 </text>
 </view>
 <view>
-<button class ='enter' style = 'opacity:{{opacity}}; ' bindgetuserinfo='bindGetUserInfo' bindtap='enterClick'>Enter OloG</button>
+<button class ='enter' style = 'opacity:{{opacity}}; ' open-type="getUserInfo" bindgetuserinfo='bindGetUserInfo' catchtap='enterClick'>Enter OloG</button>
 </view>
 </view>

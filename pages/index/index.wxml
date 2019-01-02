@@ -1,9 +1,11 @@
 <!--index.wxml-->
 <view class="container" bindtouchstart='starttouchpage' bindtouchmove='movetouchpage' bindtouchend='endtouchpage'>
+<!--
 <dialog id='dialog' 
       bind:confirmEvent='confirmEvent'
       bind:bindGetUserInfo='bindGetUserInfo'>
 </dialog>
+-->
 <view class ='history'>
   <image class ='face' bindtap ='clickface' bindtouchstart ='starttouchface'
   bindtouchend='endtouchface' src='{{facepic_url}}'/>

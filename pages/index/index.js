@@ -63,9 +63,11 @@ Page({
               })
             }})
         }
+        /*
         else{
           that.dialog.showDialog();
         }
+        */
       }
     })
     }

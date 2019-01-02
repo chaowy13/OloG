@@ -4,8 +4,8 @@ const app = getApp();
 const IMAGE_FACE_SEAGULL = '../../images/bg/ss.gif'; 
 const IMAGE_FACE_GRAGUAL ='../../images/bg/ss2.gif'
 const IMAGE_FACE_STATIC = '../../images/bg/init2.png';
-const GOLDEN_SLUMBERS = "http://isure.stream.qqmusic.qq.com/C400004GHNme3ifE3T.m4a?guid=4113464841&vkey=F36BEAD827B35824F5C5C7D79443FB035CE527A99181549346BE9A121E3A97B1FFED3215F8691F5FF454E64D5BAC46566285A4EFEC63B242&uin=0&fromtag=66";
-const O = "http://isure.stream.qqmusic.qq.com/C400004Jrkwu2glzdM.m4a?guid=4113464841&vkey=2A19BFA1D71E89F54EC52120F9F7A0E23A278FF8243CFE822BD5B3839CF6E37E4C49B7D140A74CEC892C2CF61916FE4356ADB3FD0DD19BDA&uin=0&fromtag=66";
+const GOLDEN_SLUMBERS="http://dl.stream.qqmusic.qq.com/C400004GHNme3ifE3T.m4a?guid=4113464841&vkey=2D0CAA9C2841DAE079BECD157C3DE04E154A0D1672E52938BE1F5542AFFD7C748D70407EEB6E614527AC0B29F5FB97F3C56F9CA94C3D6E3C&uin=0&fromtag=66";
+const O ="http://dl.stream.qqmusic.qq.com/C400004Jrkwu2glzdM.m4a?guid=4113464841&vkey=1BC289DBDDF594605DE3DA6B4BB5E73CADD536816EB020822B2BEBE138D83C2633851F5D29C89C0B09CBE1FFA321B1C4F06BB31603032F34&uin=0&fromtag=66";
 const music = wx.createInnerAudioContext();
 
 
@@ -23,7 +23,10 @@ Page({
     opacity:0,
     bgshow:1,
     gifshow:0,
-    isMusicPlay:false
+    isMusicPlay:false,
+    userInfo: app.globalData.userInfo,
+    hasUserInfo: false
+
     //'#5a7ebb'
   },
 
@@ -161,7 +164,6 @@ Page({
   },
 
   bindGetUserInfo: function (e) {
-
     var that = this;
     // 调用登录接口
     wx.getUserInfo({
@@ -171,10 +173,10 @@ Page({
           userInfo: app.globalData.userInfo,
           hasUserInfo: true
         })
-        nickName = res.userInfo.nickName
+       
         wx.setStorage({
           key: 'nickName',
-          data: nickName
+          data:res.userInfo.nickName
         })
         wx.setStorage({
           key: 'avatarUrl',
@@ -182,15 +184,18 @@ Page({
         })
       }
     })
-  },
-  enterClick:function(){
     this.stop();
     this.setData({ isplay: false });
     wx.redirectTo({
-    url: '../index/index',
-  })
-  wx.setStorageSync('auth', true);
+      url: '../index/index',
+    })
+    wx.setStorageSync('auth', true);
+
+
+
   },
+
+  
 
   play: function () {
     music.src = GOLDEN_SLUMBERS;

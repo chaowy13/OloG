@@ -10,7 +10,8 @@ Page({
     words_list:[{
       date: '',
       words:''
-    }]
+    }],
+    records:['','']
   },
 
   /**
@@ -20,86 +21,37 @@ Page({
     var that = this;
     var index = that.index;
     var nwords_list = that.data.words_list;
+    var records= new Array();
   
-    wx.getStorage({
-      key:'records',
-      success: function (res) {
-        for (var i in res.data) {
-          var date = res.data[i]
-          wx.getStorage({
-            key: date,
-            success: function (ress) {
-              var words = ress.data
-              if(words){
-              var nlist = [{ date, words }]
-              }
-              nwords_list = nwords_list.concat(nlist);
-            }
-          })
-        } 
-       }
-        })
-    
+    records = wx.getStorageSync('records')
+    for (var i in records) {
+      var date = records[i]
+       var words = wx.getStorageSync(date)
+
+          console.log('loopdate: ' + date)
+          console.log('words: ' + words)
+
+          if (words) {
+            var nlist = { date, words}
+            console.log('nlistwords:' + nlist.words)
+            console.log('nlistdate:' + nlist.date)
+            nwords_list = nwords_list.concat(nlist);
+          }
+    }
+
     that.setData({
       words_list: nwords_list
     })
-
-
-
-        
-
-
-
-      },
+    },
  
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
+  
 
   /**
      * 用户点击右上角分享
      */
   onShareAppMessage: function () {
-    var username = wx.getStorageSync('nickName')
+    var username = wx.getStorageSync('nickName') ||'mystery man'
     return {
       title:'History @'+ username,
       path: "/pages/index/index?page=history"

@@ -83,7 +83,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    var username = wx.getStorageSync('nickName')
+    var username = wx.getStorageSync('nickName') || 'mystery man'
     return {
       title: 'Diary ' + this.data.date+' @' + username,
       path: "/pages/index/index?page=diary"
@@ -119,6 +119,8 @@ starttouchsave:function() {
     key: record.date,
     data: record.input,
   })
+    console.log(record.date)
+    console.log(record.input)
   var records = wx.getStorageSync('records') || []
     if (records[0] != util.formatDate(new Date()))
     records.unshift(util.formatDate(new Date()))
@@ -126,6 +128,7 @@ starttouchsave:function() {
       key: 'records',
       data: records,
     })
+    console.log(records)
     if(record.input){
     wx.showToast({
       title: 'Saved to Diary',
