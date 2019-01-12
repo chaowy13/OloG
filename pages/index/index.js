@@ -63,11 +63,6 @@ Page({
               })
             }})
         }
-        /*
-        else{
-          that.dialog.showDialog();
-        }
-        */
       }
     })
     }
@@ -159,13 +154,7 @@ Page({
   },
 
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    console.log('done')
 
-  },
   /**  
  * 用户点击右上角分享
  */
@@ -180,11 +169,12 @@ Page({
 
    /**
    * 页面相关事件处理函数--监听用户下拉动作
+   
    */
   onPullDownRefresh: function () {
     var that = this;
-    wx.stopPullDownRefresh(this)
-    this.setData({
+    
+    that.setData({
       facepic_url: IMAGE_FACE_WINK
     }
     )
@@ -193,39 +183,6 @@ Page({
         facepic_url: IMAGE_FACE_SMILE
       })
     }, 300)
-
-  },
-onReady:function(){
-  //获得dialog组件
-  this.dialog = this.selectComponent("#dialog");
-},
-
-  confirmEvent: function () {
-    this.dialog.hideDialog();
-  },
-
-  bindGetUserInfo: function (e) {
-
-    var that = this;
-    // 调用登录接口
-    wx.getUserInfo({
-      success: function (res) {
-        app.globalData.userInfo = res.userInfo;
-        that.setData({
-          userInfo: app.globalData.userInfo,
-          hasUserInfo: true
-        })
-        nickName = res.userInfo.nickName
-        wx.setStorage({
-          key: 'nickName',
-          data: nickName
-        })
-        wx.setStorage({
-          key: 'avatarUrl',
-          data: res.userInfo.avatarUrl
-        })
-      }
-    })
+    wx.stopPullDownRefresh()
   }
-  
 })

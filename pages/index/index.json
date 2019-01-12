@@ -1,8 +1,4 @@
 {
-  "onReachBottomDistance": 50,
   "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark",
-      "usingComponents": {
-        "dialog": "../../components/dialog/dialog"
-      }
+  "backgroundTextStyle": "dark"
   }

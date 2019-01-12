@@ -122,13 +122,14 @@ starttouchsave:function() {
     console.log(record.date)
     console.log(record.input)
   var records = wx.getStorageSync('records') || []
-    if (records[0] != util.formatDate(new Date()))
-    records.unshift(util.formatDate(new Date()))
+    if (util.formatDate(new Date(records[0])) != util.formatDate(new Date()))
+      records.unshift(Date.now())
   wx.setStorage({
       key: 'records',
       data: records,
     })
     console.log(records)
+    console.log(record.input)
     if(record.input){
     wx.showToast({
       title: 'Saved to Diary',

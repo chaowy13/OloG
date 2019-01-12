@@ -1,0 +1,9 @@
+<!--pages/history/detail.wxml-->
+
+<view class='dateZone'>
+<text class='dateStr'>{{date}}</text>
+</view>
+
+<view class='diaryZone'>
+<text class='diary'>{{words}}</text>
+</view>

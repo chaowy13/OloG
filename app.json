@@ -6,7 +6,8 @@
     "pages/diary/diary",
     "pages/history/history",
     "pages/me/me",
-    "pages/launch/launch"
+    "pages/launch/launch",
+    "pages/history/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

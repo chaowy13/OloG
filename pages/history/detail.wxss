@@ -1,0 +1,20 @@
+/* pages/history/detail.wxss */
+
+.dateZone {
+margin-left: 60rpx;
+}
+.dateStr{
+color:rgba(255, 156, 0, 1);
+background-color: rgba(255, 156, 0, 0.1)
+
+}
+.diaryZone{
+margin-left: 60rpx;
+margin-top: 36rpx;
+width: 630rpx;
+}
+.diary{
+color:rgb(53, 53, 53);
+
+
+}

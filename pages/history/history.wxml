@@ -1,17 +1,63 @@
 <!--pages/history/history.wxml-->
-<view class='testZone'>
-<text class='testStr'>{{index}}</text>
-</view>
-<view class='wordslist'>
- <block wx:for="{{words_list}}" wx:key="k">
 
+<view class='wordslist' wx:if="{{isList}}">
+ <block wx:for="{{words_list}}"wx:for-item ="item" wx:key = "year" wx:for-index='yearindex'>
+<block wx:for="{{item.yeardata}}" wx:for-item ="itemmonth" wx:key = "month" wx:for-index='monthindex'>
+  <block wx:for="{{itemmonth.monthdata}}" wx:for-item ="itemdiary" wx:key = "date">
  <view class='wordslist-item'>
-<view class='dayZone'>
-<text class='dayStr' selectable='true'>{{item.date}}</text>
-</view>
-<view class='wordsZone'>
-<text class='wordsStr'selectable='true'>{{item.words}}</text>
-</view>
+   <view class='dayZone'>
+<text class='dayStr' selectable='true'>{{itemdiary.date}}</text>
+   </view>
+  <view class='wordsZone'>
+<text class='wordsStr'selectable='true'>{{itemdiary.words}}</text>
+   </view>
  </view>
 </block>
+</block>
+</block>
+</view>
+
+
+<view class='grid-wordslist' wx:if="{{isGrid}}">
+<block wx:for="{{words_list}}"wx:for-item ="item" wx:key = "year" wx:for-index='yearindex'>
+ <block wx:for="{{item.yeardata}}" wx:for-item ="itemmonth" wx:key = "month" wx:for-index='monthindex'>
+ <view class='grid-item'>
+<view class='grid-dayZone'>
+<text class='grid-dayStr' selectable='true'>{{itemmonth.yMdate}}</text>
+</view>
+<block wx:for="{{itemmonth.monthdata}}" wx:for-item ="itemdiary" wx:key = "date" wx:for-index='dayindex'>
+<view class="grid-listZone" style = "background-color:{{clickId ==dayindex ?changecolor:listcolor}}" bindtap='clickdiary' data-index= "{{dayindex}}" data-date="{{itemdiary.date}}">
+<view class='grid-titleZone'> 
+<view class='grid-titleStr'>
+<text>{{itemdiary.day}}</text>
+</view>
+<view class='grid-titleStr2'>
+<text>{{itemdiary.weekday}}</text>
+</view>
+</view>
+<view class='grid-wordsZone'>
+<text class='grid-wordsStr'
+>{{itemdiary.words}}</text>
+</view>
+
+
+
+</view>
+<view class="divLine" wx:if="{{dayindex != itemmonth.monthdata.length - 1}}"></view>
+</block>
+
+ </view>
+</block>
+</block>
+</view>
+
+
+<view class='coverbg' style='display:{{display}};' catchtouchmove='move' bindtap='recover'/>
+<view class='face_button'>
+  <image style = 'opacity:{{opacity}};' bindtap ='clickface'  src='{{button_url}}'/>
+  </view>
+<view class='mode_choose' style='display:{{display}};'>
+<image class='bg'src='{{bg_url}}'/>
+  <image class='list' bindtap ='clicklist' src='{{list_url}}'/>
+  <image class='grid' bindtap ='clickgrid' src='{{grid_url}}'/>
 </view>

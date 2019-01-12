@@ -13,8 +13,6 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-  
-
     // 登录
     wx.login({
       success: res => {
@@ -52,3 +50,4 @@ App({
     }
   }
 })
+//[1547043470000,1546957070000,1546953145000,1546866745000,1546607545000,1546521145000,1546348345000,1546175545000,1546089145000]
