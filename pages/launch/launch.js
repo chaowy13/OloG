@@ -1,11 +1,15 @@
 // pages/lanuch/launch.js
 
 const app = getApp();
-const IMAGE_FACE_SEAGULL = '../../images/bg/ss.gif'; 
-const IMAGE_FACE_GRAGUAL ='../../images/bg/ss2.gif'
-const IMAGE_FACE_STATIC = '../../images/bg/init2.png';
-const GOLDEN_SLUMBERS ="http://isure.stream.qqmusic.qq.com/C400004GHNme3ifE3T.m4a?guid=4113464841&vkey=6582E0FD107D72ABC39AC2A99B31A47E67C1392CCD03A428D6D11077C4CB7DFC4B3FB04E15BD87A12C18CA0F132C3C66BE22FBFB7C80BA19&uin=0&fromtag=66";
-const O = "http://isure.stream.qqmusic.qq.com/C400004Jrkwu2glzdM.m4a?guid=4113464841&vkey=8429E5339E453C3A39D673BFC330616106B61B20A9B149FDF3005D5747B5487705B0FA940D21FCC1B4DE7FFF5DAC93DA72633286584E6926&uin=0&fromtag=66";
+const IMAGE_FACE_SEAGULL = 'https://pukamoe.com/resource/images/bg/ss.gif'; 
+const IMAGE_FACE_GRAGUAL ='https://pukamoe.com/resource/images/bg/ss2.gif'
+const IMAGE_FACE_STATIC = 'https://pukamoe.com/resource/images/bg/init2.png';
+
+
+const GOLDEN_SLUMBERS ="https://pukamoe.com/resource/Golden_Slumbers.mp3";
+const O = "https://pukamoe.com/resource/One_night.mp3";
+
+
 const music = wx.createInnerAudioContext();
 
 
@@ -47,10 +51,11 @@ Page({
 
     var that = this;
     
+    
     setTimeout(function () {
           that.play();        
     }, 2500)
-
+    
 
     var that = this;
     for (let i = 0; i < 10; i++) {
@@ -186,12 +191,13 @@ Page({
     })
     this.stop();
     this.setData({ isplay: false });
+    console.log(1)
     wx.redirectTo({
       url: '../index/index',
     })
     wx.setStorageSync('auth', true);
 
-
+    console.log(1)
 
   },
 
@@ -209,12 +215,14 @@ Page({
     }
     )
   },
+  
 
 
   stop: function () {
     music.stop();
     this.setData({ isMusicPlay: false });
   },
+
 
 onPullDownRefresh: function () {
     var that = this;
@@ -229,6 +237,7 @@ music.pause();
   wx.stopPullDownRefresh(this)
 
   },
+  
 
 
 })

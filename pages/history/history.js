@@ -1,11 +1,11 @@
 // pages/history/history.js
 var util = require('../../utils/util.js');
-const IMAGE_FACE_BUTTON = '../../images/face_button.png';
-const IMAGE_LIST_CHOSEN = '../../images/list_icon_chosen.png';
-const IMAGE_LIST = '../../images/list_icon.png';
-const IMAGE_GRID_CHOSEN = '../../images/grid_icon_chosen.png';
-const IMAGE_GRID = '../../images/grid_icon.png';
-const IMAGE_BAR_BG = '../../images/bar_bg.png';
+const IMAGE_FACE_BUTTON = 'https://pukamoe.com/resource/images/face_button.png';
+const IMAGE_LIST_CHOSEN = 'https://pukamoe.com/resource/images/list_icon_chosen.png';
+const IMAGE_LIST = 'https://pukamoe.com/resource/images/list_icon.png';
+const IMAGE_GRID_CHOSEN = 'https://pukamoe.com/resource/images/grid_icon_chosen.png';
+const IMAGE_GRID = 'https://pukamoe.com/resource/images/grid_icon.png';
+const IMAGE_BAR_BG = 'https://pukamoe.com/resource/images/bar_bg.png';
 const WHITE = '#FFFFFF'
 const GREY ='#e7e7e7'
 const yeardata = new Array();
@@ -29,7 +29,7 @@ Page({
     display: 'none',
     index:'',
     words_list:[],
-    clickId:null
+    clickId:null,
   },
 
   /**
@@ -154,7 +154,6 @@ var that =this
     that.setData({
       changecolor:GREY,
       clickId: index
-
     })
     wx.navigateTo({
       url: '/pages/history/detail?date='+date,

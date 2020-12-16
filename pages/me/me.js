@@ -1,5 +1,5 @@
 // pages/me/me.js
-const IMAGE_ICON='../../images/iconhalf.jpg'
+const IMAGE_ICON='https://pukamoe.com/resource/images/iconhalf.jpg'
 Page({
 
   /**

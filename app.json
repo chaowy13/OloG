@@ -14,5 +14,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "OLoG",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

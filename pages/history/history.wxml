@@ -26,7 +26,7 @@
 <text class='grid-dayStr' selectable='true'>{{itemmonth.yMdate}}</text>
 </view>
 <block wx:for="{{itemmonth.monthdata}}" wx:for-item ="itemdiary" wx:key = "date" wx:for-index='dayindex'>
-<view class="grid-listZone" style = "background-color:{{clickId ==dayindex ?changecolor:listcolor}}" bindtap='clickdiary' data-index= "{{dayindex}}" data-date="{{itemdiary.date}}">
+<view class="grid-listZone" style = "background-color:{{clickId == yearindex+','+monthindex + ','+dayindex ?changecolor:listcolor}}" bindtap='clickdiary' data-index= "{{yearindex}},{{monthindex}},{{dayindex}}" data-date="{{itemdiary.date}}">
 <view class='grid-titleZone'> 
 <view class='grid-titleStr'>
 <text>{{itemdiary.day}}</text>

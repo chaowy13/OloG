@@ -1,7 +1,7 @@
 
 var util = require('../../utils/util.js');
-const IMAGE_FACE_SMILE = '../../images/smile.png';
-const IMAGE_FACE_WINK = '../../images/wink.png';
+const IMAGE_FACE_SMILE = 'https://pukamoe.com/resource/smile.png';
+const IMAGE_FACE_WINK = 'https://pukamoe.com/resource/images/wink.png';
 
 Page({
 

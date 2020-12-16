@@ -1,9 +1,9 @@
 //index.js
 //获取应用实例
 const app = getApp();
-const IMAGE_FACE_SMILE = '../../images/smile.png';
-const IMAGE_FACE_WINK = '../../images/wink.png';
-const IMAGE_FACE_ADD = '../../images/add.png';
+const IMAGE_FACE_SMILE = 'https://pukamoe.com/resource/images/smile.png';
+const IMAGE_FACE_WINK = 'https://pukamoe.com/resource/images/wink.png';
+const IMAGE_FACE_ADD = 'https://pukamoe.com/resource/images/add.png';
 var nickName = 'Secret'
 
 Page({
